@@ -1,0 +1,14 @@
+﻿@page "/parent"
+
+<div>@_message</div>
+
+<ChildComponent OnClick="ChildClickHandler" />
+
+@code {
+    private string _message;
+
+    private void ChildClickHandler(string message)
+    {
+        _message = $"Child Clicked: {message}";
+    }
+}

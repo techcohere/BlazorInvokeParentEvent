@@ -1,0 +1,10 @@
+﻿<button @onclick="ChildClick">Child Button</button>
+@code {
+    [Parameter]
+    public EventCallback<string> OnClickCallParentEvent { get; set; }
+
+    private void ChildClick()
+    {
+        OnClickCallParentEvent.InvokeAsync("Message from Child");
+    }
+}
